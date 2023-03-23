@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: authentication_service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: P@ssw0rd
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+server:
+  port: 8999
+
+app:
+  jwtSecret: ${KEY_JWT:*Q7V^^U30^GJ!fZEuLsC&qG9w&UVw&$1&CwnqMV!}
+  jwtExpirationMs: 180000
+  jwtSecretToken: ${SECURE_TOKEN:l7ACW2o4@i1Geso#tF9iet8LeH@3xLtj%rPRr5G^}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

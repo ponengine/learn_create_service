@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://${DOMAIN_DB_PROFILE:localhost}:5432/${DB_PROFILE:postgres}
+    username: ${USER_DB_PROFILE:postgres}
+    password: ${PASS_DB_PROFILE:P@ssw0rd}
+  application:
+    name: profile_service
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL81Dialect
+server:
+  port: 8090
+
+
+

@@ -1,0 +1,10 @@
+server:
+  port: 8091
+
+spring:
+  datasource:
+    url: jdbc:postgresql://${DOMAIN_DB_MOCKBANK:localhost}:5432/${DB_MOCKBANK:postgres}
+    username: ${USER_DB_MOCKBANK:postgres}
+    password: ${PASS_DB_MOCKBANK:P@ssw0rd}
+  application:
+    name: mock_bank

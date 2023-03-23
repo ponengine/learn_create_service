@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: postgressql
+  name: postgressql
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postgressql
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: postgressql
+    spec:
+      containers:
+        - image: postgres:11-alpine
+          name: postgres
+          resources: {}
+          ports:
+            - containerPort: 5432
+          env:
+            - name: POSTGRES_DB
+              value: postgres
+            - name: POSTGRES_USER
+              value: postgres
+            - name: POSTGRES_PASSWORD
+              value: P@ssw0rd
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: postgressql
+  name: postgressql
+spec:
+  ports:
+    - name: 5432-5432
+      port: 5432
+      protocol: TCP
+      targetPort: 5432
+  selector:
+    app: postgressql
+  type: NodePort
+status:
+  loadBalancer: {}
